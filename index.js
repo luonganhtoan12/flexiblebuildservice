@@ -1,12 +1,9 @@
-function combinationSum4(nums, target) {
-  const dp = new Array(target + 1).fill(0);
-  dp[0] = 1;
-  for (let i = 1; i <= target; i++) {
-    for (const num of nums) {
-      if (i >= num) {
-        dp[i] += dp[i - num];
-      }
-    }
+function maxProfit(prices) {
+  let minPrice = Infinity;
+  let maxProfit = 0;
+  for (const price of prices) {
+    minPrice = Math.min(minPrice, price);
+    maxProfit = Math.max(maxProfit, price - minPrice);
   }
-  return dp[target];
+  return maxProfit;
 }
