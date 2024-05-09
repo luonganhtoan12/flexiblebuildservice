@@ -1,8 +1,4 @@
-const linearSearch = (arr, target) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === target) {
-      return i;
-    }
-  }
-  return -1;
-};
+function findKthLargest(nums, k) {
+  nums.sort((a, b) => b - a);
+  return nums[k - 1];
+}
